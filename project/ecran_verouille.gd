@@ -1,6 +1,6 @@
 extends Panel
 
-const PASSWORD = "1234"
+const PASSWORD = "891289345711"
 
 @export var unlocked_scene_path: String = "res://ecranDeverouille.tscn"
 @export var room_path: String = "res://node_2d.tscn"

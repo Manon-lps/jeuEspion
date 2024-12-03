@@ -1,47 +1,107 @@
-[gd_scene load_steps=9 format=3 uid="uid://drli817k3ey1t"]
+[gd_scene load_steps=21 format=3 uid="uid://drli817k3ey1t"]
 
 [ext_resource type="Texture2D" uid="uid://bjfoumbkoo77t" path="res://redpaper.png" id="1_4mffy"]
+[ext_resource type="Script" path="res://area_red.gd" id="1_k1q0j"]
 [ext_resource type="Texture2D" uid="uid://uil5iw1eb70v" path="res://bluepaper.png" id="3_lq0ns"]
+[ext_resource type="Script" path="res://area_blue.gd" id="3_qpamn"]
 [ext_resource type="Texture2D" uid="uid://bini4f5biei05" path="res://yellowpaper.png" id="4_fo0u0"]
+[ext_resource type="Script" path="res://area_yellow.gd" id="5_4mje3"]
 [ext_resource type="Texture2D" uid="uid://cp4vria8gvgj3" path="res://pinkpaper.png" id="5_f2a1m"]
 [ext_resource type="Texture2D" uid="uid://bwrhdmex2p6g0" path="res://purplepaper.png" id="6_pq0so"]
+[ext_resource type="Script" path="res://area_pink.gd" id="7_73coj"]
 [ext_resource type="Texture2D" uid="uid://c7jynvgqddfkc" path="res://greenpaper.png" id="7_a12cu"]
+[ext_resource type="Script" path="res://area_purple.gd" id="9_xsx6w"]
+[ext_resource type="Script" path="res://area_green.gd" id="11_hvrlo"]
 [ext_resource type="Texture2D" uid="uid://dj2w6xi37mrxo" path="res://redcross.png" id="13_q2ou1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi18"]
+size = Vector2(249, 258.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l364"]
+size = Vector2(252.5, 257)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy4fr"]
+size = Vector2(251, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nar07"]
+size = Vector2(246, 254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6hyd"]
+size = Vector2(248, 251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqhg6"]
+size = Vector2(249, 252)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dler1"]
 size = Vector2(33, 35)
 
 [node name="paper" type="Node2D"]
 
-[node name="paper_purple" type="Sprite2D" parent="."]
-position = Vector2(514, 272)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_pq0so")
+[node name="AreaRed" type="Area2D" parent="."]
+script = ExtResource("1_k1q0j")
 
-[node name="paper_red" type="Sprite2D" parent="."]
-position = Vector2(135, 102)
-scale = Vector2(0.5, 0.5)
+[node name="paper_red" type="Sprite2D" parent="AreaRed"]
+position = Vector2(332, 201)
 texture = ExtResource("1_4mffy")
 
-[node name="paper_blue" type="Sprite2D" parent="."]
-position = Vector2(516, 108)
-scale = Vector2(0.5, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRed"]
+position = Vector2(333.5, 172.75)
+shape = SubResource("RectangleShape2D_tgi18")
+
+[node name="AreaBlue" type="Area2D" parent="."]
+script = ExtResource("3_qpamn")
+
+[node name="paper_blue" type="Sprite2D" parent="AreaBlue"]
+position = Vector2(487, 173)
 texture = ExtResource("3_lq0ns")
 
-[node name="paper_yellow" type="Sprite2D" parent="."]
-position = Vector2(133, 259)
-scale = Vector2(0.5, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBlue"]
+position = Vector2(487.75, 146.5)
+shape = SubResource("RectangleShape2D_4l364")
+
+[node name="AreaYellow" type="Area2D" parent="."]
+script = ExtResource("5_4mje3")
+
+[node name="paper_yellow" type="Sprite2D" parent="AreaYellow"]
+position = Vector2(191, 341)
 texture = ExtResource("4_fo0u0")
 
-[node name="paper_pink" type="Sprite2D" parent="."]
-position = Vector2(305, 262)
-scale = Vector2(0.5, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaYellow"]
+position = Vector2(191.5, 317)
+shape = SubResource("RectangleShape2D_vy4fr")
+
+[node name="AreaPink" type="Area2D" parent="."]
+script = ExtResource("7_73coj")
+
+[node name="paper_pink" type="Sprite2D" parent="AreaPink"]
+position = Vector2(363, 411)
 texture = ExtResource("5_f2a1m")
 
-[node name="paper_green" type="Sprite2D" parent="."]
-position = Vector2(310, 105)
-scale = Vector2(0.5, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPink"]
+position = Vector2(363, 385)
+shape = SubResource("RectangleShape2D_nar07")
+
+[node name="AreaPurple" type="Area2D" parent="."]
+script = ExtResource("9_xsx6w")
+
+[node name="paper_purple" type="Sprite2D" parent="AreaPurple"]
+position = Vector2(577, 397)
+texture = ExtResource("6_pq0so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPurple"]
+position = Vector2(578, 371.5)
+shape = SubResource("RectangleShape2D_m6hyd")
+
+[node name="AreaGreen" type="Area2D" parent="."]
+script = ExtResource("11_hvrlo")
+
+[node name="paper_green" type="Sprite2D" parent="AreaGreen"]
+position = Vector2(359, 257)
 texture = ExtResource("7_a12cu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaGreen"]
+position = Vector2(359.5, 231)
+shape = SubResource("RectangleShape2D_sqhg6")
 
 [node name="AreaCroix" type="Area2D" parent="."]
 

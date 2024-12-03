@@ -15,4 +15,6 @@ func _input_event(viewport, event, shape_idx):
 
 func _process(delta):
 	if is_dragging:
-		global_position = get_global_mouse_position() + drag_offset
+		var canvas_transform = get_viewport().get_canvas_transform().affine_inverse()
+		var mouse_position = canvas_transform * get_global_mouse_position()
+		global_position = mouse_position + drag_offset

@@ -107,6 +107,7 @@ func spawn_papers():
 	add_child(paper_instance)
 	paper_instance.global_position = next_paper_position
 	paperstab.append(paper_instance) 
+	$FondEcran/AreaPC.visible = false
 	
 	next_paper_position += spawn_offset
 
@@ -115,6 +116,7 @@ func hide_papers():
 	for paper in paperstab:
 		paper.queue_free() 
 		paperstab.clear()
+	$FondEcran/AreaPC.visible = true
 
 
 

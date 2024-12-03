@@ -1,0 +1,169 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr8fkatkscp81"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_pof81"]
+[ext_resource type="Texture2D" uid="uid://b0sr1px5xl57r" path="res://MDS_2024-11-21 22-07-38.png" id="2_85l4t"]
+[ext_resource type="Texture2D" uid="uid://cnu673d00ljkl" path="res://livres-removebg-preview.png" id="3_4o0jf"]
+[ext_resource type="Texture2D" uid="uid://dj2w6xi37mrxo" path="res://redcross.png" id="4_q3rmh"]
+[ext_resource type="Texture2D" uid="uid://igxorprlktw4" path="res://PNG/notebook.png" id="5_jr0ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blfsr"]
+size = Vector2(51.7115, 18.5186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei61b"]
+size = Vector2(483.291, 371.428)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87onc"]
+size = Vector2(43.3001, 48.4326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u86tn"]
+size = Vector2(443.006, 370.47)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pof81")
+
+[node name="FondEcran" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576.5, 324)
+scale = Vector2(0.699, 0.63)
+texture = ExtResource("2_85l4t")
+
+[node name="AreaPC" type="Area2D" parent="FondEcran"]
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaPC"]
+visible = false
+position = Vector2(-961.668, -600)
+scale = Vector2(1.66812, 1.85185)
+color = Color(0.972549, 0.882353, 0.976471, 0.0745098)
+polygon = PackedVector2Array(608, 215, 640, 228, 640, 214, 699, 235, 701, 198, 642, 177, 642, 163, 608, 153)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FondEcran/AreaPC"]
+polygon = PackedVector2Array(104.257, -179.63, 105.925, -203.704, 202.676, -164.815, 206.012, -231.481, 107.593, -270.37, 107.593, -298.148, 54.2137, -316.667, 52.5456, -201.852)
+
+[node name="AreaCarnet" type="Area2D" parent="FondEcran"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FondEcran/AreaCarnet"]
+position = Vector2(-3.33624, -200)
+shape = SubResource("RectangleShape2D_blfsr")
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaCarnet"]
+visible = false
+color = Color(1, 1, 1, 0.133333)
+polygon = PackedVector2Array(-27.5239, -192.593, 22.5195, -192.593, 22.5195, -207.407, 19.1833, -209.259, -0.834106, -209.259, -2.5022, -207.407, -5.83844, -209.259, -24.1877, -209.259, -27.5239, -205.556)
+
+[node name="AreaCafe" type="Area2D" parent="FondEcran"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FondEcran/AreaCafe"]
+polygon = PackedVector2Array(172.65, -140.741, 174.318, -131.481, 179.322, -129.63, 187.663, -129.63, 190.999, -135.185, 192.667, -142.593, 194.335, -153.704, 196.004, -157.407, 196.004, -164.815, 192.667, -168.518, 174.318, -168.518, 170.982, -162.963, 170.982, -159.259, 172.65, -155.556)
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaCafe"]
+visible = false
+color = Color(1, 1, 1, 0.117647)
+polygon = PackedVector2Array(174.318, -131.481, 177.654, -129.63, 187.663, -129.63, 190.999, -133.333, 192.667, -142.593, 194.335, -153.704, 196.004, -157.407, 196.004, -164.815, 192.667, -168.518, 174.318, -168.518, 170.982, -162.963, 170.982, -159.259, 172.65, -155.556, 172.65, -140.741)
+
+[node name="AreaLivres" type="Area2D" parent="FondEcran"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FondEcran/AreaLivres"]
+polygon = PackedVector2Array(-178.112, -250.794, -160.944, -257.143, -162.375, -293.651, -173.82, -298.413, -179.542, -296.825, -179.542, -271.429, -178.112, -255.556)
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaLivres"]
+visible = false
+color = Color(1, 1, 1, 0.152941)
+polygon = PackedVector2Array(-179.542, -285.714, -179.542, -296.825, -173.82, -298.413, -162.375, -293.651, -160.944, -257.143, -178.112, -250.794, -178.112, -255.556, -179.542, -273.016)
+
+[node name="Livreimg" type="Sprite2D" parent="FondEcran/AreaLivres"]
+visible = false
+position = Vector2(-10.7296, -55.5555)
+scale = Vector2(1.28914, 1.28989)
+texture = ExtResource("3_4o0jf")
+
+[node name="croix" type="Sprite2D" parent="FondEcran/AreaLivres"]
+visible = false
+position = Vector2(362.661, -347.619)
+scale = Vector2(0.139127, 0.166667)
+texture = ExtResource("4_q3rmh")
+
+[node name="AreaCroix" type="Area2D" parent="FondEcran/AreaLivres/croix"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FondEcran/AreaLivres/croix/AreaCroix"]
+position = Vector2(15.4248, 14.2855)
+shape = SubResource("RectangleShape2D_ei61b")
+
+[node name="AreaCroixPapier" type="Area2D" parent="FondEcran"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FondEcran/AreaCroixPapier"]
+position = Vector2(746.066, -430.159)
+shape = SubResource("RectangleShape2D_87onc")
+
+[node name="Sprite2D" type="Sprite2D" parent="FondEcran/AreaCroixPapier"]
+position = Vector2(746.066, -431.746)
+scale = Vector2(0.0801144, 0.092262)
+texture = ExtResource("4_q3rmh")
+
+[node name="AreaPaper" type="Area2D" parent="FondEcran"]
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaPaper"]
+visible = false
+color = Color(1, 1, 1, 0.207843)
+polygon = PackedVector2Array(-341.202, 46.0317, -338.34, 53.9683, -332.618, 60.3175, -322.604, 66.6667, -311.159, 71.4286, -308.298, 66.6667, -308.298, 60.3175, -296.853, 53.9683, -302.575, 52.381, -306.867, 47.6191, -309.728, 41.2698)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FondEcran/AreaPaper"]
+polygon = PackedVector2Array(-341.202, 46.0317, -338.34, 53.9683, -332.618, 60.3175, -311.159, 71.4286, -308.298, 66.6667, -308.298, 60.3175, -296.853, 53.9683, -301.144, 52.381, -306.867, 47.6191, -309.728, 41.2698)
+
+[node name="AreaHorloge" type="Area2D" parent="FondEcran"]
+
+[node name="Polygon2D" type="Polygon2D" parent="FondEcran/AreaHorloge"]
+visible = false
+color = Color(1, 1, 1, 0.164706)
+polygon = PackedVector2Array(136.624, -331.746, 129.471, -328.571, 129.471, -304.762, 189.557, -284.127, 198.14, -287.302, 199.571, -309.524)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FondEcran/AreaHorloge"]
+polygon = PackedVector2Array(129.471, -328.571, 136.624, -331.746, 199.571, -309.524, 198.14, -287.302, 189.557, -284.127, 129.471, -304.762)
+
+[node name="SpriteNB" type="Sprite2D" parent="FondEcran"]
+visible = false
+position = Vector2(-30.7583, 38.0953)
+scale = Vector2(1.66195, 1.85053)
+texture = ExtResource("5_jr0ah")
+
+[node name="AreaCroixCarnet" type="Area2D" parent="FondEcran/SpriteNB"]
+position = Vector2(18.5073, -20.5862)
+scale = Vector2(0.601703, 0.540386)
+
+[node name="SpriteCroix" type="Sprite2D" parent="FondEcran/SpriteNB/AreaCroixCarnet"]
+position = Vector2(474.249, -373.016)
+scale = Vector2(0.0775042, 0.0985449)
+texture = ExtResource("4_q3rmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FondEcran/SpriteNB/AreaCroixCarnet"]
+position = Vector2(474.249, -372.222)
+scale = Vector2(0.0775042, 0.0985449)
+shape = SubResource("RectangleShape2D_u86tn")
+
+[connection signal="input_event" from="FondEcran/AreaPC" to="." method="_on_area_pc_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaPC" to="." method="_on_area_pc_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaPC" to="." method="_on_area_pc_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaCarnet" to="." method="_on_area_carnet_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaCarnet" to="." method="_on_area_carnet_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaCarnet" to="." method="_on_area_carnet_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaCafe" to="." method="_on_area_cafe_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaCafe" to="." method="_on_area_cafe_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaCafe" to="." method="_on_area_cafe_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaLivres" to="." method="_on_area_livres_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaLivres" to="." method="_on_area_livres_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaLivres" to="." method="_on_area_livres_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaLivres/croix/AreaCroix" to="." method="_on_area_croix_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaLivres/croix/AreaCroix" to="." method="_on_area_croix_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaLivres/croix/AreaCroix" to="." method="_on_area_croix_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaCroixPapier" to="." method="_on_area_croix_papier_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaCroixPapier" to="." method="_on_area_croix_papier_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaCroixPapier" to="." method="_on_area_croix_papier_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaPaper" to="." method="_on_area_paper_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaPaper" to="." method="_on_area_paper_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaPaper" to="." method="_on_area_paper_mouse_exited"]
+[connection signal="input_event" from="FondEcran/AreaHorloge" to="." method="_on_area_horloge_input_event"]
+[connection signal="mouse_entered" from="FondEcran/AreaHorloge" to="." method="_on_area_horloge_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/AreaHorloge" to="." method="_on_area_horloge_mouse_exited"]
+[connection signal="input_event" from="FondEcran/SpriteNB/AreaCroixCarnet" to="." method="_on_area_croix_carnet_input_event"]
+[connection signal="mouse_entered" from="FondEcran/SpriteNB/AreaCroixCarnet" to="." method="_on_area_croix_carnet_mouse_entered"]
+[connection signal="mouse_exited" from="FondEcran/SpriteNB/AreaCroixCarnet" to="." method="_on_area_croix_carnet_mouse_exited"]

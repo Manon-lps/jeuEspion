@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxqdkkxocg8qu"]
+
+[ext_resource type="Script" path="res://ecran_verouille.gd" id="1_ajgtx"]
+[ext_resource type="Script" path="res://line_edit.gd" id="2_2ruaq"]
+[ext_resource type="Shader" path="res://ecran_verouille.gdshader" id="2_2ssr6"]
+[ext_resource type="Texture2D" uid="uid://bht57w66gtm5k" path="res://PNG/windows_xp_frog_user_icon_hq_by_stinkyjaden_dfkdd5b-fullview.jpg" id="2_25pva"]
+[ext_resource type="Texture2D" uid="uid://bayfqjbja8si8" path="res://login.svg" id="3_b6cn6"]
+[ext_resource type="Texture2D" uid="uid://bp24llihq17w4" path="res://PNG/lockscreen.jpg" id="3_jeyg2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mo3l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3t55e"]
+shader = ExtResource("2_2ssr6")
+shader_parameter/blur_radius = 3.0
+
+[node name="Panel" type="Panel"]
+offset_right = 1155.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7mo3l")
+script = ExtResource("1_ajgtx")
+
+[node name="SpriteLockscreen" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3t55e")
+position = Vector2(571, 326)
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("3_jeyg2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 276.0
+offset_right = 623.0
+offset_bottom = 335.0
+text = "Utilisateur"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 325.0
+offset_right = 651.0
+offset_bottom = 356.0
+placeholder_text = "Mot de passe"
+script = ExtResource("2_2ruaq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 242)
+scale = Vector2(0.0507813, 0.05)
+texture = ExtResource("2_25pva")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 327.0
+offset_right = 680.0
+offset_bottom = 355.0
+icon = ExtResource("3_b6cn6")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 3.0
+offset_right = 1147.0
+offset_bottom = 34.0
+text = "Retour"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

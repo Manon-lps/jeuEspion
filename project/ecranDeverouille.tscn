@@ -1,0 +1,163 @@
+[gd_scene load_steps=18 format=3 uid="uid://dnnm5ty1lakn0"]
+
+[ext_resource type="Script" path="res://ecran_deverouille.gd" id="1_2hqnd"]
+[ext_resource type="Texture2D" uid="uid://cdybcghmjphde" path="res://PNG/Sans titre.png" id="1_a7p4g"]
+[ext_resource type="Texture2D" uid="uid://daedgyekmd8pp" path="res://PNG/windows-xp.jpg" id="1_ue5wb"]
+[ext_resource type="Texture2D" uid="uid://bybms2i3ribmo" path="res://PNG/Blue/Double/bar_square_large_m.png" id="2_qt2x0"]
+[ext_resource type="Texture2D" uid="uid://c8jl16hm4rxi3" path="res://PNG/Blue/Double/bar_square_gloss_large.png" id="2_wth1v"]
+[ext_resource type="Texture2D" uid="uid://dldmrqm3pfp0r" path="res://PNG/Green/Double/bar_round_gloss_large_m.png" id="3_sn1jv"]
+[ext_resource type="Texture2D" uid="uid://bd8gdjd8xt8a4" path="res://PNG/50rpapjn990816qc05dm9l0eeq-d969e51cf605a1c71662a889d72cb846.png" id="4_13n4f"]
+[ext_resource type="Texture2D" uid="uid://cwkalhgjjpmvt" path="res://PNG/Linux-Logo.wine_.png" id="4_ko6f0"]
+[ext_resource type="Texture2D" uid="uid://bht57w66gtm5k" path="res://PNG/windows_xp_frog_user_icon_hq_by_stinkyjaden_dfkdd5b-fullview.jpg" id="5_5dh8p"]
+[ext_resource type="Texture2D" uid="uid://d128yepyxi8pj" path="res://PNG/Win XP 9 (1).jpg" id="10_tu0m4"]
+[ext_resource type="Texture2D" uid="uid://0t8sk5igwqf1" path="res://PNG/flag.txt.png" id="12_2sjht"]
+[ext_resource type="Texture2D" uid="uid://dwrjpu717gifx" path="res://PNG/tumblr_091435cda9870d6e97ba9a29dfbb5683_bfe2d0fd_540.png" id="12_nb448"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26h75"]
+size = Vector2(42.4918, 48.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g3wb"]
+size = Vector2(165, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1p80"]
+size = Vector2(213.69, 230.769)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gamyk"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k2uu"]
+
+[node name="Ecran" type="Node2D"]
+script = ExtResource("1_2hqnd")
+
+[node name="Bureau" type="Node2D" parent="."]
+
+[node name="FondEcran" type="Sprite2D" parent="Bureau"]
+position = Vector2(576.5, 323.5)
+scale = Vector2(0.598438, 0.5425)
+texture = ExtResource("1_ue5wb")
+
+[node name="BarreTaches" type="Sprite2D" parent="Bureau"]
+position = Vector2(583, 633)
+scale = Vector2(24.8333, 0.75)
+texture = ExtResource("2_qt2x0")
+
+[node name="Demarrer" type="Sprite2D" parent="Bureau"]
+position = Vector2(48, 633)
+scale = Vector2(2.54167, 0.75)
+texture = ExtResource("3_sn1jv")
+
+[node name="AreaDemarrer" type="Area2D" parent="Bureau/Demarrer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bureau/Demarrer/AreaDemarrer"]
+position = Vector2(2.7541, 0)
+shape = SubResource("RectangleShape2D_26h75")
+
+[node name="Logo" type="Sprite2D" parent="Bureau"]
+position = Vector2(13, 632)
+scale = Vector2(0.01425, 0.01475)
+texture = ExtResource("4_ko6f0")
+
+[node name="Label" type="Label" parent="Bureau"]
+offset_left = 27.0
+offset_top = 620.0
+offset_right = 103.0
+offset_bottom = 643.0
+text = "Démarrer"
+
+[node name="MenuDemarrer" type="Node2D" parent="Bureau"]
+visible = false
+
+[node name="FondMenuDemarrer" type="Sprite2D" parent="Bureau/MenuDemarrer"]
+position = Vector2(158.625, 443)
+scale = Vector2(0.680998, 0.54321)
+texture = ExtResource("1_a7p4g")
+
+[node name="BarreDuHautMenu" type="Sprite2D" parent="Bureau/MenuDemarrer"]
+position = Vector2(159.375, 241.563)
+scale = Vector2(1.68359, 1.0651)
+texture = ExtResource("2_wth1v")
+
+[node name="LabelMesDocuments" type="Label" parent="Bureau/MenuDemarrer"]
+offset_left = 185.0
+offset_top = 277.0
+offset_right = 308.0
+offset_bottom = 300.0
+text = "Mes documents"
+
+[node name="AreaDoc" type="Area2D" parent="Bureau/MenuDemarrer/LabelMesDocuments"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bureau/MenuDemarrer/LabelMesDocuments/AreaDoc"]
+position = Vector2(44, 12)
+shape = SubResource("RectangleShape2D_7g3wb")
+
+[node name="Utilisateur" type="Label" parent="Bureau/MenuDemarrer"]
+offset_left = 69.0
+offset_top = 231.0
+offset_right = 161.0
+offset_bottom = 258.0
+text = "Utilisateur
+"
+
+[node name="Documents" type="Sprite2D" parent="Bureau/MenuDemarrer"]
+position = Vector2(162, 287)
+scale = Vector2(0.113281, 0.0976561)
+texture = ExtResource("4_13n4f")
+
+[node name="LogoUtilisateur" type="Sprite2D" parent="Bureau/MenuDemarrer"]
+texture_filter = 1
+position = Vector2(37.1875, 241.313)
+scale = Vector2(0.0293945, 0.0291992)
+texture = ExtResource("5_5dh8p")
+
+[node name="MesDocuments" type="Node2D" parent="."]
+
+[node name="FenetreDoc" type="Sprite2D" parent="MesDocuments"]
+visible = false
+position = Vector2(690, 335)
+scale = Vector2(0.629883, 0.57808)
+texture = ExtResource("10_tu0m4")
+
+[node name="fichierTxt" type="Sprite2D" parent="MesDocuments"]
+visible = false
+position = Vector2(564, 238)
+scale = Vector2(0.173148, 0.156)
+texture = ExtResource("12_nb448")
+
+[node name="AreaTxt" type="Area2D" parent="MesDocuments/fichierTxt"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MesDocuments/fichierTxt/AreaTxt"]
+position = Vector2(-8.66357, 0.000244141)
+shape = SubResource("RectangleShape2D_e1p80")
+
+[node name="flag_txt" type="Label" parent="MesDocuments"]
+visible = false
+offset_left = 546.0
+offset_top = 260.0
+offset_right = 601.0
+offset_bottom = 283.0
+text = "flag.txt"
+label_settings = SubResource("LabelSettings_gamyk")
+
+[node name="Flag" type="Sprite2D" parent="MesDocuments"]
+visible = false
+position = Vector2(849, 385)
+scale = Vector2(0.726563, 0.671698)
+texture = ExtResource("12_2sjht")
+
+[node name="exitFlag" type="Area2D" parent="MesDocuments/Flag"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MesDocuments/Flag/exitFlag"]
+position = Vector2(368.86, -248.624)
+shape = SubResource("RectangleShape2D_1k2uu")
+
+[connection signal="input_event" from="Bureau/Demarrer/AreaDemarrer" to="." method="_on_area_demarrer_input_event"]
+[connection signal="mouse_entered" from="Bureau/Demarrer/AreaDemarrer" to="." method="_on_area_demarrer_mouse_entered"]
+[connection signal="mouse_exited" from="Bureau/Demarrer/AreaDemarrer" to="." method="_on_area_demarrer_mouse_exited"]
+[connection signal="input_event" from="Bureau/MenuDemarrer/LabelMesDocuments/AreaDoc" to="." method="_on_area_doc_input_event"]
+[connection signal="mouse_entered" from="Bureau/MenuDemarrer/LabelMesDocuments/AreaDoc" to="." method="_on_area_doc_mouse_entered"]
+[connection signal="mouse_exited" from="Bureau/MenuDemarrer/LabelMesDocuments/AreaDoc" to="." method="_on_area_doc_mouse_exited"]
+[connection signal="input_event" from="MesDocuments/fichierTxt/AreaTxt" to="." method="_on_area_txt_input_event"]
+[connection signal="mouse_entered" from="MesDocuments/fichierTxt/AreaTxt" to="." method="_on_area_txt_mouse_entered"]
+[connection signal="mouse_exited" from="MesDocuments/fichierTxt/AreaTxt" to="." method="_on_area_txt_mouse_exited"]

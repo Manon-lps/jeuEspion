@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnnm5ty1lakn0"]
+
+[ext_resource type="Texture2D" uid="uid://cdybcghmjphde" path="res://PNG/Sans titre.png" id="1_16qvt"]
+[ext_resource type="Texture2D" uid="uid://c8jl16hm4rxi3" path="res://PNG/Blue/Double/bar_square_gloss_large.png" id="2_kj8l4"]
+[ext_resource type="Texture2D" uid="uid://euiimdsubt23" path="res://PNG/93m105cj7mh5a01ecd3c5h2jvj-2eea9e1e8e1d30cc14658e9e940b1144.png" id="3_y5r0f"]
+[ext_resource type="Texture2D" uid="uid://bd8gdjd8xt8a4" path="res://PNG/50rpapjn990816qc05dm9l0eeq-d969e51cf605a1c71662a889d72cb846.png" id="4_l4a82"]
+[ext_resource type="Texture2D" uid="uid://bht57w66gtm5k" path="res://PNG/windows_xp_frog_user_icon_hq_by_stinkyjaden_dfkdd5b-fullview.jpg" id="5_36vbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g3wb"]
+size = Vector2(165, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkfw7"]
+size = Vector2(134, 24)
+
+[node name="Ecran" type="Node2D"]
+
+[node name="MenuDemarrer" type="Node2D" parent="."]
+visible = false
+
+[node name="FondMenuDemarrer" type="Sprite2D" parent="MenuDemarrer"]
+position = Vector2(158.625, 443)
+scale = Vector2(0.680998, 0.54321)
+texture = ExtResource("1_16qvt")
+
+[node name="BarreDuHautMenu" type="Sprite2D" parent="MenuDemarrer"]
+position = Vector2(159.375, 241.563)
+scale = Vector2(1.68359, 1.0651)
+texture = ExtResource("2_kj8l4")
+
+[node name="LabelMesDocuments" type="Label" parent="MenuDemarrer"]
+offset_left = 185.0
+offset_top = 277.0
+offset_right = 308.0
+offset_bottom = 300.0
+text = "Mes documents"
+
+[node name="AreaDoc" type="Area2D" parent="MenuDemarrer/LabelMesDocuments"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuDemarrer/LabelMesDocuments/AreaDoc"]
+position = Vector2(44, 12)
+shape = SubResource("RectangleShape2D_7g3wb")
+
+[node name="MesImages" type="Sprite2D" parent="MenuDemarrer"]
+position = Vector2(162, 317)
+scale = Vector2(0.117187, 0.0966798)
+texture = ExtResource("3_y5r0f")
+
+[node name="LabelMesImages" type="Label" parent="MenuDemarrer"]
+offset_left = 185.0
+offset_top = 308.0
+offset_right = 276.0
+offset_bottom = 331.0
+text = "Mes images"
+
+[node name="Area2D" type="Area2D" parent="MenuDemarrer/LabelMesImages"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MenuDemarrer/LabelMesImages/Area2D"]
+position = Vector2(29, 12)
+shape = SubResource("RectangleShape2D_pkfw7")
+
+[node name="Utilisateur" type="Label" parent="MenuDemarrer"]
+offset_left = 69.0
+offset_top = 231.0
+offset_right = 161.0
+offset_bottom = 258.0
+text = "Utilisateur
+"
+
+[node name="Documents" type="Sprite2D" parent="MenuDemarrer"]
+position = Vector2(162, 287)
+scale = Vector2(0.113281, 0.0976561)
+texture = ExtResource("4_l4a82")
+
+[node name="LogoUtilisateur" type="Sprite2D" parent="MenuDemarrer"]
+texture_filter = 1
+position = Vector2(37.1875, 241.313)
+scale = Vector2(0.0293945, 0.0291992)
+texture = ExtResource("5_36vbh")
